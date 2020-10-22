@@ -18,6 +18,7 @@ class CreateComentariosTable extends Migration
             $table->string('comentario');
             $table->unsignedBigInteger('id_Producto');
             $table->unsignedBigInteger('id_Persona');
+            //              id interno              id de la tabla a referenciar
             $table->foreign('id_Producto')->references('id')->on('productos');
             $table->foreign('id_Persona')->references('id')->on('personas');
             $table->timestamps();

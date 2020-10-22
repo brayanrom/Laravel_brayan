@@ -16,6 +16,8 @@ class CreatePersonasTable extends Migration
         Schema::create('personas', function (Blueprint $table) {
             $table->id();
             $table->string('NombrePersona');
+            $table->string('ApellidoPaPersona');
+            $table->string('ApellidoMaPersona');
             $table->timestamps();
         });
     }
