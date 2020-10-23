@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CursoController;
-use App\Http\Controllers\API\PersonasController;
+use App\Http\Controllers\PersonasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,5 +30,3 @@ Route::get('curso', [CursoController::class,'index']);
 Route::get('curso/create', [CursoController::class,'create']);
 Route::get('curso/{curso}', [CursoController::class,'show']);
 Route::get("personas",[PersonasController::class,'showPersona']);
-
-
