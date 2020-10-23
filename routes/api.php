@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CursoController;
 use App\Http\Controllers\PersonasController;//necesario para que funcione ;v
 use App\Http\Controllers\ProductosController;
+use App\Http\Controllers\ComentariosController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -31,11 +33,22 @@ Route::get('/', function () {
 
 
                             //PERSONAS
-Route::get("/personas/{id?}",[PersonasController::class,'showPersona'])->where("id","[0-9]+");
+Route::get("/personas/{id?}",[PersonasController::class,'showPersonas'])->where("id","[0-9]+");
 //Route::get("/personas/{id?}","PersonasController@showPersona")->where("id","[0-9]+");  //no funciona de esta manera
-Route::post("/personas/{id?}",[PersonasController::class,'savePersona']);
+Route::post("/personas/{id?}",[PersonasController::class,'savePersonas']);
+Route::put("/personas/{id?}",[PersonasController::class,'editPersonas'])->where("id","[0-9]+");
+Route::delete("/personas/{id?}",[PersonasController::class,'deletePersonas'])->where("id","[0-9]+");
+
+
                             //PRODUCTOS
 Route::get('/productos/{id?}',[ProductosController::class,'showProductos'])->where("id","[0-9]+");
 Route::post("/productos/{id?}",[ProductosController::class,'saveProductos']);
+Route::put('/productos/{id?}',[ProductosController::class,'editProductos'])->where("id","[0-9]+");
+Route::delete('/productos/{id?}',[ProductosController::class,'deleteProductos'])->where("id","[0-9]+");
 
-                            
+
+                            //COMENTARIOS
+Route::get('/comentarios/{id?}',[ComentariosController::class,'showComentarios'])->where("id","[0-9]+");
+Route::post('/comentarios/{id?}',[ComentariosController::class,'saveComentarios']);
+Route::put('/comentarios/{id?}',[ComentariosController::class,'editComentarios'])->where("id","[0-9]+");
+Route::delete('/comentarios/{id?}',[ComentariosController::class,'deleteComentarios'])->where("id","[0-9]+");
