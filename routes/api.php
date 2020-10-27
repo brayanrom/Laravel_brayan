@@ -33,8 +33,8 @@ Route::get('/', function () {
 
 
                             //PERSONAS
-Route::get("/personas/{id?}",[PersonasController::class,'showPersonas'])->where("id","[0-9]+");
-//Route::get("/personas/{id?}","PersonasController@showPersona")->where("id","[0-9]+");  //no funciona de esta manera
+//Route::get("/personas/{id?}",[PersonasController::class,'showPersonas'])->where("id","[0-9]+");
+Route::get("/personas/{id?}","PersonasController@showPersonas")->where("id","[0-9]+");  //no funciona de esta manera
 Route::post("/personas/{id?}",[PersonasController::class,'savePersonas']);
 Route::put("/personas/{id?}",[PersonasController::class,'editPersonas'])->where("id","[0-9]+");
 Route::delete("/personas/{id?}",[PersonasController::class,'deletePersonas'])->where("id","[0-9]+");

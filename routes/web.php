@@ -1,8 +1,7 @@
 <?php
 
-use App\Http\Controllers\CursoController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,17 +12,7 @@ use App\Http\Controllers\HomeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', function () {
-    return "Hola Mundo";
+    return view('welcome');
 });
-/*
-//retorna datos con dos variables teiendo la ultima como opcional
-Route::get('curso/{curso}/{categoria?}', function ($curso,$categoria=null) {
-if($categoria){
-    return "Bienvenido al curso $curso de la categoria $categoria";
-    }
-    else{
-        return "Bienvenido al curso $curso"; 
-    }
-});
-*/
